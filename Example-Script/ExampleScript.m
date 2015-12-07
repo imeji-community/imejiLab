@@ -6,7 +6,7 @@
 
 %--------------------------------------------------------------------------
 % We load an excel sheet to extract the metadata
-[~,~,raw] = xlsread('C:\Users\malik\Desktop\Data');
+[~,~,raw] = xlsread('\path\to\Data');
 EpidatIdlist = raw(:,1);
 
 %--------------------------------------------------------------------------
