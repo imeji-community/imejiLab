@@ -5,15 +5,15 @@
 %-------------------------------------------------------------------------%
 
 %--------------------------------------------------------------------------
-% We load the already parsed excel sheet and parsed geburtsdatum
+% We load an excel sheet to extract the metadata
 [~,~,raw] = xlsread('C:\Users\malik\Desktop\Data');
 EpidatIdlist = raw(:,1);
 
 %--------------------------------------------------------------------------
 % Here we specify path to the folder where the images are stored 
-foldername = 'C:\Users\malik\Documents\MATLAB\Bilder\'; % path
-files = dir(fullfile(foldername, '*.jpg'));              % format of the images   
-NoOfFiles = length(files);                               % total number of files
+foldername = '\path\to\Bilder\';              % path
+files = dir(fullfile(foldername, '*.jpg'));   % format of the images   
+NoOfFiles = length(files);                    % total number of files
 
 %--------------------------------------------------------------------------
 
@@ -92,7 +92,7 @@ typeUri_HebrewName = 'http://imeji.org/terms/metadata#text';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
 %   From here on we will start populating the metadata fields using       %
-%   the parsed captions and the provided Excel sheet.                     %  
+%   the parsed image captions and the provided Excel sheet.               %  
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -300,9 +300,9 @@ for counter = 1:NoOfFiles
     end
      
     % Here we specify the path along with the file name 
-    path = strcat('C:\Users\malik\Documents\MATLAB\Bilder\',files(counter).name);
+    path = strcat('\path\to\Bilder\',files(counter).name);
     
-    % We display to the Command window which file is being uploaded
+    % We display on the Command window which file is being uploaded
     Uploading = strcat('Uploading:  ',files(counter).name);
     disp(Uploading)
     
