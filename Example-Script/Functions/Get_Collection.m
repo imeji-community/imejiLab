@@ -18,7 +18,7 @@ files = dir(fullfile(path, '*.ini'));
 fname = strcat(path,files(1).name);
 [keys,~,~] = inifile(fname,'readall');
 
-% Generate the bas url to make a GET request
+% Generate the base url to make a GET request
 base_url = strcat(keys{2,4},'rest/collections/',collectionId);
 
 % Specify parameters for a GET request
